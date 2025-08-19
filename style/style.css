@@ -1,141 +1,222 @@
-:root{
+:root {
   /* Default (desktop-ish) overlay anchors — % of image height */
-  --y-title:    8.5%;
-  --y-tag:      18%;
-  --y-contact:  68%;
-  --y-fine:     87%;
+  --y-title: 8.5%;
+  --y-tag: 18%;
+  --y-contact: 68%;
+  --y-fine: 87%;
 
   --max-width: 900px;
-  --text:#222; 
-  --button-bg:#000; 
-  --button-fg:#fff;
+  --text: #222;
+  --button-bg: #000;
+  --button-fg: #fff;
 }
 
 /* page + card */
-html,body{height:100%}
-body{
-  margin:0; padding:30px; min-height:100vh;
-  display:flex; align-items:center; justify-content:center;
-  background:url("../img/tile.png") repeat center top;
-  color:var(--text);
-  font-family: system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+html,
+body {
+  height: 100%;
 }
-.card{max-width:var(--max-width); width:min(92vw,var(--max-width));}
+body {
+  margin: 0;
+  padding: 30px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("../img/tile.png") repeat center top;
+  color: var(--text);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+.card {
+  max-width: var(--max-width);
+  width: min(92vw, var(--max-width));
+}
 
 /* container is the positioning context for the fine print */
-.awcContainer{position:relative; width:100%}
+.awcContainer {
+  position: relative;
+  width: 100%;
+  padding-bottom: 24px;
+}
 
 /* artwork + overlays */
-.awcAssembly{
-  position:relative;
-  width:100%;
-  max-width:800px;
-  margin-inline:auto;
+.awcAssembly {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin-inline: auto;
 }
 
 /* full-frame image drives the height */
-.awcWrapMain img{
-  width:100%; height:auto; display:block;
-  user-select:none; -webkit-user-drag:none;
+.awcWrapMain img {
+  width: 100%;
+  height: auto;
+  display: block;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
+
 /* ---- overlay blocks pinned by % of image height ---- */
-.awcTitle,.tagline,.awcWrapContact,.fineprint{
-  position:absolute; left:50%; transform:translateX(-50%);
-  width:100%; text-align:center; margin:0; z-index:2;
+.awcTitle,
+.tagline,
+.awcWrapContact,
+.fineprint,
+.awcCopyright {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  z-index: 2;
   /* subtle contrast help on busy pixels */
-  text-shadow: 0 1px 0 rgba(255,255,255,.35);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+
+
+
+.awcCopyright {
+  margin-top: 24px;
 }
 
 /* anchor them */
-.awcTitle{     top:var(--y-title)}
-.tagline{      top:var(--y-tag)}
-.awcWrapContact{top:var(--y-contact)}
-.fineprint{     top:var(--y-fine)}
+.awcTitle {
+  top: var(--y-title);
+}
+.tagline {
+  top: var(--y-tag);
+}
+.awcWrapContact {
+  top: var(--y-contact);
+}
+.fineprint {
+  top: var(--y-fine);
+}
 
 /* type */
-.awcTitle{
-  font-family:"Times New Roman",Times,serif;
-  font-weight:600;
-  line-height:1.05;
+.awcTitle {
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 600;
+  line-height: 1.05;
   /* smaller floor so phones don’t overlap the line art */
-  font-size:clamp(1.7rem, 3.6vw + .5rem, 3rem);
-  letter-spacing:.02em;
+  font-size: clamp(1.7rem, 3.6vw + 0.5rem, 3rem);
+  letter-spacing: 0.02em;
 }
-.awcFW200{font-weight:200}
-
-.tagline{
-  font-family:"Times New Roman",Times,serif;
-  font-style:italic;
-  line-height:1.1;
-  font-size:clamp(1rem, 2.4vw + .2rem, 1.8rem);
+.awcFW200 {
+  font-weight: 200;
 }
 
-.awcInfo{
-  line-height:1.1;
-  font-weight:700;
+.tagline {
+  font-family: "Times New Roman", Times, serif;
+  font-style: italic;
+  line-height: 1.1;
+  font-size: clamp(1rem, 2.4vw + 0.2rem, 1.8rem);
+}
+
+.awcInfo {
+  line-height: 1.1;
+  font-weight: 700;
   /* clamp so “For information:” doesn’t wrap on tiny widths */
-  font-size:clamp(1rem, 1.2vw + .7rem, 1.4rem);
-  margin:0 0 .5rem;
+  font-size: clamp(1rem, 1.2vw + 0.7rem, 1.4rem);
+  margin: 0 0 0.5rem;
 }
 
 /* button */
-.btn{
-  display:inline-block;
-  padding:.55rem .95rem;
-  border-radius:6px;
-  background:var(--button-bg); color:var(--button-fg);
-  text-decoration:none; font-weight:700; letter-spacing:.02em;
-  font-size:clamp(.85rem, 1vw + .55rem, 1rem);
-  line-height:1;
+.btn {
+  display: inline-block;
+  padding: 0.55rem 0.95rem;
+  border-radius: 6px;
+  background: var(--button-bg);
+  color: var(--button-fg);
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  font-size: clamp(0.85rem, 1vw + 0.55rem, 1rem);
+  line-height: 1;
 }
 
-
-.btn:focus-visible{outline:2px solid #555; outline-offset:2px}
+.btn:focus-visible {
+  outline: 2px solid #555;
+  outline-offset: 2px;
+}
 
 /* fine print */
-.fineprint{
-  font-size:clamp(.8rem, .5vw + .65rem, 1rem);
-  font-style:italic;
+.awcCopyright,
+.fineprint {
+  font-size: clamp(0.8rem, 0.5vw + 0.65rem, 1rem);
+  font-style: italic;
+}
+
+/* address link */
+.awcAddress {
+  font-size: clamp(0.9rem, 0.5vw + 0.65rem, 1.3rem);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  z-index: 2;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.35);
+  top: 85%; /* Position it between contact and copyright */
+  text-decoration: none;
+  color: var(--text);
 }
 
 /* ---------- responsive position tweaks ---------- */
 /* Big tablet */
-@media (max-width: 720px){
-  :root{
-    --y-title:    9.5%;
-    --y-tag:     19%;
+@media (max-width: 720px) {
+  :root {
+    --y-title: 9.5%;
+    --y-tag: 19%;
     --y-contact: 69%;
-    --y-fine:    87.5%;
+    --y-fine: 87.5%;
+  }
+  .awcAddress {
+    top: 85.5%;
   }
 }
 
 /* Small tablet / large phone */
-@media (max-width: 560px){
-  :root{
-    --y-title:   10.8%;
-    --y-tag:     20.5%;
+@media (max-width: 560px) {
+  :root {
+    --y-title: 10.8%;
+    --y-tag: 20.5%;
     --y-contact: 70%;
-    --y-fine:    88.5%;
+    --y-fine: 88.5%;
+  }
+  .awcAddress {
+    top: 86%;
   }
 }
 
 /* Narrow phones (~375–440px) */
-@media (max-width: 440px){
-  :root{
-    --y-title:   12.2%;
-    --y-tag:     22.5%;
+@media (max-width: 440px) {
+  :root {
+    --y-title: 12.2%;
+    --y-tag: 22.5%;
     --y-contact: 71%;
-    --y-fine:    89%;
+    --y-fine: 89%;
+  }
+  .awcAddress {
+    top: 86.5%;
   }
 }
 
 /* Very narrow (≤360px) */
-@media (max-width: 360px){
-  :root{
-    --y-title:   13.5%;
-    --y-tag:     24%;
+@media (max-width: 360px) {
+  :root {
+    --y-title: 13.5%;
+    --y-tag: 24%;
     --y-contact: 72%;
-    --y-fine:    89.5%;
+    --y-fine: 89.5%;
   }
+  .awcAddress {
+    top: 87%;
+  }
+}
+
+.awcTextCenter {
+  text-align: center !important;
 }
