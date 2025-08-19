@@ -1,9 +1,9 @@
 :root {
   /* Default (desktop-ish) overlay anchors — % of image height */
-  --y-title: 8.5%;
-  --y-tag: 18%;
-  --y-contact: 68%;
-  --y-fine: 87%;
+  --y-title: 7%;
+  --y-tag: 16%;
+  --y-contact: 72%;
+  --y-fine: 95%;
 
   --max-width: 900px;
   --text: #222;
@@ -18,11 +18,12 @@ body {
 }
 body {
   margin: 0;
-  padding: 30px;
+  padding: 20px;
   min-height: 100vh;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
+  padding-top: 10vh;
   background: url("../img/tile.png") repeat center top;
   color: var(--text);
   font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
@@ -36,7 +37,7 @@ body {
 .awcContainer {
   position: relative;
   width: 100%;
-  padding-bottom: 24px;
+  padding-bottom: 40px;
 }
 
 /* artwork + overlays */
@@ -144,8 +145,10 @@ body {
 /* fine print */
 .awcCopyright,
 .fineprint {
-  font-size: clamp(0.8rem, 0.5vw + 0.65rem, 1rem);
+  font-size: clamp(0.8rem, 0.5vw + 0.5vw + 0.65rem, 1rem);
   font-style: italic;
+  text-align: center;
+  margin-top: 4rem;
 }
 
 /* address link */
@@ -156,64 +159,96 @@ body {
   transform: translateX(-50%);
   width: 100%;
   text-align: center;
-  margin: 0;
-  z-index: 2;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.35);
-  top: 85%; /* Position it between contact and copyright */
   text-decoration: none;
   color: var(--text);
+  margin: 1rem 0;
+  z-index: 2;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.35);
+  top: 82%;
 }
 
 /* ---------- responsive position tweaks ---------- */
 /* Big tablet */
 @media (max-width: 720px) {
   :root {
-    --y-title: 9.5%;
-    --y-tag: 19%;
-    --y-contact: 69%;
-    --y-fine: 87.5%;
+    --y-title: 8%;
+    --y-tag: 17%;
+    --y-contact: 75%;
+    --y-fine: 86%;
   }
   .awcAddress {
-    top: 85.5%;
+    top: 83%;
+  }
+  
+  /* Adjust padding for mobile */
+  body {
+    padding: 18px;
+    padding-top: 35px;
   }
 }
 
 /* Small tablet / large phone */
 @media (max-width: 560px) {
   :root {
-    --y-title: 10.8%;
-    --y-tag: 20.5%;
-    --y-contact: 70%;
-    --y-fine: 88.5%;
+    --y-title: 9%;
+    --y-tag: 18%;
+    --y-contact: 76%;
+    --y-fine: 87%;
   }
   .awcAddress {
-    top: 86%;
+    top: 84%;
+  }
+  
+  /* Adjust padding for mobile */
+  body {
+    padding: 18px;
+    padding-top: 35px;
   }
 }
 
 /* Narrow phones (~375–440px) */
 @media (max-width: 440px) {
   :root {
-    --y-title: 12.2%;
-    --y-tag: 22.5%;
-    --y-contact: 71%;
-    --y-fine: 89%;
+    --y-title: 10%;
+    --y-tag: 19%;
+    --y-contact: 77%;
+    --y-fine: 88%;
   }
   .awcAddress {
-    top: 86.5%;
+    top: 85%;
+  }
+  
+  /* More spacing for smaller phones */
+  body {
+    padding: 15px;
+    padding-top: 25px;
   }
 }
 
 /* Very narrow (≤360px) */
 @media (max-width: 360px) {
   :root {
-    --y-title: 13.5%;
-    --y-tag: 24%;
-    --y-contact: 72%;
-    --y-fine: 89.5%;
+    --y-title: 11%;
+    --y-tag: 20%;
+    --y-contact: 75%;
+    --y-fine: 95%;
   }
   .awcAddress {
-    top: 87%;
+    top: 85%;
+  }
+  
+  .awcCopyright {
+    margin-top: 6rem;
+  }
+  
+  /* Reduce padding on very small screens */
+  body {
+    padding: 15px;
+    padding-top: 20px;
+  }
+  
+  .awcContainer {
+    padding-bottom: 30px;
   }
 }
 
