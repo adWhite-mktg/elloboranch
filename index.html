@@ -30,9 +30,11 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "LodgingBusiness", 
+    "@type": "LodgingBusiness",
+    "@id": "https://www.elloboranch.com",
     "name": "El Lobo Ranch",
     "description": "El Lobo Ranch® is a secluded private retreat surrounded by natural beauty. Quiet, timeless, peaceful.",
+    "image": "https://www.elloboranch.com/img/main-full.webp",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "11875 County Road 199",
@@ -43,14 +45,31 @@
     },
     "url": "https://www.elloboranch.com",
     "email": "rwoolum@kingaerospace.com",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer service",
+      "email": "rwoolum@kingaerospace.com"
+    },
     "geo": {
       "@type": "GeoCoordinates",
       "latitude": "31.9857",
       "longitude": "-97.8714"
     },
+    "areaServed": {
+      "@type": "State",
+      "name": "Texas"
+    },
     "sameAs": [
       "https://maps.app.goo.gl/SBbcnV1WgusLXvt58"
-    ]
+    ],
+    "potentialAction": {
+      "@type": "ReserveAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "mailto:rwoolum@kingaerospace.com",
+        "inLanguage": "en-US"
+      }
+    }
   }
   </script>
   <script>
